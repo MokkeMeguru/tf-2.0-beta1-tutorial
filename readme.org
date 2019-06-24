@@ -12,7 +12,7 @@
 #+creator: Emacs 26.1 (Org mode 9.2.4)
 * what's this?
   これはTensorflow2.0-beta （とEmacs）の勉強のためのレポジトリです。
-  [[./edit-image.png]]
+  [[./img/edit-image.png]]
 * constitution
 #+begin_quote
 root
@@ -42,7 +42,7 @@ M-x elpy-config # (open the buffer, and you can install some package from "[run]
 
 これで必要な環境はおおよそ整いました。ファイルを眺めるなり編集するなりしてください。
 
-[[./elpy-config-example.png]]
+[[./img/elpy-config-example.png]]
 * How to edit?
 - C-c C-c : 
 
@@ -69,7 +69,7 @@ M-x elpy-config # (open the buffer, and you can install some package from "[run]
   - YOUR INTERESTING FOR TENSORFLOW (you can also use Chainer or PyTorch, and other frameworks)
 
 * [Advanced] elpy
-  [[./ein-example.png]]
+  [[./img/ein-example.png]]
   emacs 式 jupyter 環境が欲しい人向け (安定していないので非推奨)
 
   #+begin_src shell
