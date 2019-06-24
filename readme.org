@@ -55,7 +55,7 @@ M-x elpy-config # (open the buffer, and you can install some package from "[run]
 - C-c C-y :
   - C-e: 
     
-    C-c C-y e でカーソルしている行（正確にはステートメント）をインタプリタに送ります。
+    C-c C-y C-e でカーソルしている行（正確にはステートメント）をインタプリタに送ります。
 
   - C-f :
     
