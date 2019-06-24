@@ -1,0 +1,120 @@
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:t d:(not "LOGBOOK") date:t e:t
+#+options: email:t f:t inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
+#+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Tensorflow 2.0 Beta Tutorials
+#+date: <2019-06-24 月>
+#+author: MokkeMeguru
+#+email: meguru.mokke@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 26.1 (Org mode 9.2.4)
+* what's this?
+  これはTensorflow2.0-beta （とEmacs）の勉強のためのレポジトリです。
+  [[./edit-image.png]]
+* constitution
+#+begin_quote
+root
+    |- ml-basics
+        |- classify-images 
+             |- classify-images.ipynb (advanced)
+             |- classify-images.py (basic)
+        |- ...
+    |- ...
+#+end_quote
+* How to setup?
+terminal で以下のコードを実行してレポジトリをクローンしてください。
+
+#+begin_src shelle
+git clone https://github.com/MokkeMeguru/tf-2.0-beta1-tutorial
+cd tf-2.0-beta1-tutorial
+python -m venv venv
+source venv/bin/activate
+pip install tensorflow==2.0beta1
+#+end_src
+
+次にEmacsを開いて以下のコードを実行して下さい。
+#+begin_src text
+M-x pyvenv-activate # (select your venv folder)
+M-x elpy-config # (open the buffer, and you can install some package from "[run]")
+#+end_src
+
+これで必要な環境はおおよそ整いました。ファイルを眺めるなり編集するなりしてください。
+
+[[./elpy-config-example.png]]
+* How to edit?
+- C-c C-c : 
+
+    選択しているコードブロック一つインタプリタに送ります。実行したいコードブロックにカーソルを合わせてコマンドしてください。
+
+- C-c C-z :
+
+  現在編集しているファイルとそれに接続しているインタプリタを行き来します。
+
+- C-c C-y :
+  - C-e: 
+    
+    C-c C-y e でカーソルしている行（正確にはステートメント）をインタプリタに送ります。
+
+  - C-f :
+    
+    C-c C-y C-f でカーソルしている defun 文をインタプリタに送ります。
+    その他 C-c C-y 以降で様々な単位（クラスなど）をインタプリタに送ることができます。慣れるまでは helm や ivy などで選択肢を確認してコマンドすると良いでしょう。
+
+* Require
+  - tensorflow==2.0beta1
+  - emcas (spacemacs) with python environment 
+    - elpy
+  - YOUR INTERESTING FOR TENSORFLOW (you can also use Chainer or PyTorch, and other frameworks)
+
+* [Advanced] elpy
+  [[./ein-example.png]]
+  emacs 式 jupyter 環境が欲しい人向け (安定していないので非推奨)
+
+  #+begin_src shell
+  sudo apt install texlive-lang-cjk texlive-fonts-extra dvipng markdown
+  #+end_src
+  
+  以下の emacs package を追加
+  - px
+  - ein
+  - latex-math-preview  
+** 使い方
+   terminal で venv 内の jupyter を立ち上げる。
+   
+  #+begin_src shell
+   source venv/bin/activate
+   pip install jupyter
+   jupyter notebook --no-browser
+   #+end_src
+   
+   M-x ein:login で立ち上げた jupyter notebook server にアクセスできる。(私の環境では、token がなくても入れる…？)
+   
+   フォルダを遷移して、編集したいファイルを見つける / 編集したいファイルを作ったら以下のキーバインドを参考にコーディングする。
+** 代表的なキーバインド
+   - C-c C-c : セルを評価 (ein:)
+   - C-c C-a : 上にセルを追加
+   - C-c C-b: 下にセルを追加
+   - C-c C-k: セルを削除
+   - C-c C-w: セルのコピー
+   - C-c C-y: セルの貼付け
+   - C-c C-x C-l : Markdown 内のセルの LaTex のコンパイル(非常に不安定)
+   - C-c C-u : セルのタイプを変更 [chmr123456]
+     - c: Pythonセル
+     - h: hylang セル
+     - m: markdown セル
+     - r: raw セル
+     - 1: h1 セル
+   - M-(uparrow): セルを移動
+
+* Tips: 
+  - M-x toggle-truncated-lines
+    
+    行の折返しの切り替え
+  - M-x linum-mode
+  
+    行番号の表示切り替え
+  - 私の spacemacs の設定
+    
+    [[https://gist.github.com/MokkeMeguru/e79f577afd92d6aade2fa2dfe8fc63ca][gist]]
