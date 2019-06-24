@@ -93,7 +93,7 @@ M-x elpy-config # (open the buffer, and you can install some package from "[run]
    
    フォルダを遷移して、編集したいファイルを見つける / 編集したいファイルを作ったら以下のキーバインドを参考にコーディングする。
 ** 代表的なキーバインド
-   - C-c C-c : セルを評価 (ein:)
+   - C-c C-c : セルを評価 (ein:worksheet-execute-cell)
    - C-c C-a : 上にセルを追加
    - C-c C-b: 下にセルを追加
    - C-c C-k: セルを削除
